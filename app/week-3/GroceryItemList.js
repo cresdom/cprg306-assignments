@@ -91,6 +91,8 @@ item12,
 const listItems = [];
 
 // for (var i = 0; i < xs.length; i++) { console.log(xs[i]); }
+// doing it this way because unsure if map() usage is allowed
+
 for (var i = 0; i < items.length; i++) {
 listItems.push(
 <Item
