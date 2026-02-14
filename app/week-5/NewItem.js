@@ -29,21 +29,22 @@ export default function NewItem() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}className="bg-white p-6 rounded-lg shadow-md w-80 space-y-4">
         {/* name of item */}
         <div>
-            <label>Item Name</label>
+            <label className="block text-purple-900 mb-1 font-medium">Item Name</label>
             <input
             type="text"
             value={name}
             onChange={(event) => setName(event.target.value)}
-            required/>
+            required
+            className="w-full p-2 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"/>
         </div>
 
         {/* quantityy & category */}
         <div className="flex gap-4">
             <div className="flex-1">
-            <label>Quantity</label>
+            <label className="block text-purple-900 mb-1 font-medium">Quantity</label>
             <input
                 type="number"
                 min="1"
@@ -51,11 +52,12 @@ export default function NewItem() {
                 value={quantity}
                 onChange={(event) =>
                 setQuantity(Number(event.target.value))
-                }/>
+                }
+                className="w-full p-2 border border-purple-300 rounded-md"/>
             </div>
 
             <div className="flex-1">
-            <label>Category</label>
+            <label className="block text-purple-900 mb-1 font-medium">Category</label>
             <select
                 value={category}
                 onChange={(event) => setCategory(event.target.value)}
