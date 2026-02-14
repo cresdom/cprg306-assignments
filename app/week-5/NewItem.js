@@ -14,7 +14,7 @@ export default function NewItem() {
         quantity: quantity,
         category: category,
         };
-        
+
         console.log(item);
         alert(
         "Added: " +
@@ -80,7 +80,7 @@ export default function NewItem() {
         </div>
 
         {/* submit button */}
-        <button type="submit"className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-md transition">+</button>
+        <button type="submit"className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-md transition">+ Add</button>
         </form>
     );
 }
