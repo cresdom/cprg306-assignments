@@ -1,25 +1,43 @@
+"use client";
+
+import { useState } from "react";
 import Item from "./item";
 
-export default function ItemList({ title, items }) {
-    const categories = [...new Set(items.map((item) => item.category))].sort();
+export default function ItemList({ items }) {
+    const [sortBy, setSortBy] = useState("name");
+
+    const sortedItems = [...items].sort((a, b) => {
+        if (sortBy === "name") return a.name.localeCompare(b.name);
+        return a.category.localeCompare(b.category);
+    });
+
+    const activeBtn = "bg-purple-700 text-white";
+    const inactiveBtn = "bg-purple-200 text-purple-900 hover:bg-purple-300";
+
 
     return (
-        <section>
-            <h2 className="text-xl font-semibold mb-4 text-center">{title}</h2>
-            <div className="space-y-8">
-            {categories.map((cat) => (
-                <div key={cat}>
-                    <h3 className="text-2xl font-bold capitalize mb-3 text-center">{cat}</h3>
-                    <ul className="space-y-3">
-                    {items
-                    .filter((item) => item.category === cat) 
-                    .map((item) => (
-                    <Item key={item.id} {...item} />
-                    ))}
-                    </ul>
-                </div>
+    <section className="mt-6 w-80">
+        <div className="flex gap-2 mb-4">
+            <button
+            type="button"
+            className={`flex-1 py-2 rounded-md font-bold transition ${
+                sortBy === "name" ? activeBtn : inactiveBtn
+            }`}
+            onClick={() => setSortBy("name")}>Sort by Name</button>
+
+            <button
+            type="button"
+            className={`flex-1 py-2 rounded-md font-bold transition ${
+                sortBy === "category" ? activeBtn : inactiveBtn
+            }`}
+            onClick={() => setSortBy("category")}>Sort by Category</button>
+        </div>
+
+        <ul className="space-y-3">
+            {sortedItems.map((item) => (
+            <Item key={item.id} {...item} />
             ))}
-            </div>
+        </ul>
         </section>
     );
 }
