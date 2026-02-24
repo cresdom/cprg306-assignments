@@ -24,6 +24,11 @@ export default function Home() {
         <div className="bg-white px-6 py-4 rounded shadow">
           <Link href="week-5" className="text-purple-600 font-light hover:underline">Week 5 Assignment</Link>
         </div>
+
+        <div className="bg-white px-6 py-4 rounded shadow">
+          <Link href="week-6" className="text-purple-600 font-light hover:underline">Week 6 Assignment</Link>
+        </div>
+        
       </main>
     </div>
   );
