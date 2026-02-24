@@ -11,8 +11,9 @@ export default function ItemList({ items }) {
         return a.category.localeCompare(b.category);
     });
 
-    const activeBtn = "bg-purple-700 text-white";
-    const inactiveBtn = "bg-purple-200 text-purple-900 hover:bg-purple-300";
+    const activeBtn = "bg-purple-700 text-white dark:bg-purple-600 dark:text-white";
+    const inactiveBtn = "bg-purple-200 text-purple-900 hover:bg-purple-300 " +
+    "dark:bg-slate-800 dark:text-purple-200 dark:hover:bg-slate-700";
 
 
     return (

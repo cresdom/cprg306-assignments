@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import itemsData from "./items.json";
 import NewItem from "./NewItem";
@@ -13,8 +14,12 @@ export default function Page() {
     }
 
     return (
-        <main className="p-6 flex flex-col items-center gap-6">
-        <h1 className="text-3xl font-bold">Shopping List</h1>
+        <main className="min-h-screen bg-linear-to-r from-violet-100 to-fuchsia-200 dark:from-slate-950 dark:to-slate-900 flex flex-col items-center gap-6 text-purple-950 dark:text-purple-100">
+            <div className="w-full max-w-xl">
+            <Link href="/" className="text-purple-700 hover:underline font-light dark:text-purple-300">← Back to Home</Link>
+        </div>
+
+        <h1 className="text-3xl font-bold text-purple-900 text-center mt-8 dark:text-purple-200">Shopping List</h1>
 
         <NewItem onAddItem={handleAddItem} />
 

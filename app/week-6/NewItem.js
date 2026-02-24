@@ -23,10 +23,10 @@ export default function NewItem({ onAddItem }) {
     }
 
     return (
-        <form onSubmit={handleSubmit}className="bg-white p-6 rounded-lg shadow-md w-80 space-y-4">
+        <form onSubmit={handleSubmit}className="bg-white dark:bg-slate-900 dark:border dark:border-slate-800 p-6 rounded-lg shadow-md w-80 space-y-4">
         {/* name of item */}
         <div>
-            <label className="block text-purple-900 mb-1 font-medium">Item Name</label>
+            <label className="block text-purple-900 dark:text-purple-200 mb-1 font-medium">Item Name</label>
             <input
             type="text"
             value={name}
@@ -38,7 +38,7 @@ export default function NewItem({ onAddItem }) {
         {/* quantityy & category */}
         <div className="flex gap-4">
             <div className="flex-1">
-            <label className="block text-purple-900 mb-1 font-medium">Quantity</label>
+            <label className="block text-purple-900 dark:text-purple-200 mb-1 font-medium">Quantity</label>
             <input
                 type="number"
                 min="1"
@@ -51,11 +51,11 @@ export default function NewItem({ onAddItem }) {
             </div>
 
             <div className="flex-1">
-            <label className="block text-purple-900 mb-1 font-medium">Category</label>
+            <label className="block text-purple-900 dark:text-purple-200 mb-1 font-medium">Category</label>
             <select
                 value={category}
                 onChange={(event) => setCategory(event.target.value)}
-                className="w-full p-2 border border-purple-300 rounded-md">
+                className="w-full p-2 rounded-md border border-purple-300 bg-white text-purple-950 dark:bg-slate-800 dark:text-purple-100 dark:border-slate-700dark:[color-scheme:dark]">
                 <option value="produce">Produce</option>
                 <option value="dairy">Dairy</option>
                 <option value="bakery">Bakery</option>
@@ -74,7 +74,7 @@ export default function NewItem({ onAddItem }) {
         {/* submit button*/}
         <button
             type="submit"
-            className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-md transition">+ Add</button>
+            className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-md transition dark:bg-purple-600 dark:hover:bg-purple-500">+ Add</button>
         </form>
     );
 }
