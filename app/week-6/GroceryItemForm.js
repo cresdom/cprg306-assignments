@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function NewItem({ onAddItem }) {
+export default function GroceryItemForm({ onAddItem }) {
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("produce");

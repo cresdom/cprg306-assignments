@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import itemsData from "./items.json";
-import NewItem from "./NewItem";
+import GroceryItemForm from "./GroceryItemForm";
 import ItemList from "./ItemList";
 
 export default function Page() {
@@ -21,7 +21,7 @@ export default function Page() {
 
         <h1 className="text-3xl font-bold text-purple-900 text-center mt-8 dark:text-purple-200">Shopping List</h1>
 
-        <NewItem onAddItem={handleAddItem} />
+        <GroceryItemForm onAddItem={handleAddItem} />
 
         <ItemList items={items} />
         </main>
