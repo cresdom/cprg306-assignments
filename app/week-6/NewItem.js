@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function NewItem() {
+export default function NewItem({ onAddItem }) {
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("produce");
@@ -10,21 +10,13 @@ export default function NewItem() {
         event.preventDefault();
 
         const item = {
-        name: name,
-        quantity: quantity,
-        category: category,
+        id: Math.random().toString(36).substring(2, 9),
+        name,
+        quantity,
+        category,
         };
 
-        console.log(item);
-        alert(
-        "Added: " +
-            item.name +
-            ", quantity: " +
-            item.quantity +
-            ", category: " +
-            item.category
-        );
-
+        onAddItem(item);
         setName("");
         setQuantity(1);
         setCategory("produce");
@@ -52,7 +44,7 @@ export default function NewItem() {
                 min="1"
                 max="99"
                 value={quantity}
-                onChange={(event) =>
+                onChange={(event) => 
                 setQuantity(Number(event.target.value))
                 }
                 className="w-full p-2 border border-purple-300 rounded-md"/>
@@ -79,8 +71,10 @@ export default function NewItem() {
             </div>
         </div>
 
-        {/* submit button */}
-        <button type="submit"className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-md transition">+ Add</button>
+        {/* submit button*/}
+        <button
+            type="submit"
+            className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-md transition">+ Add</button>
         </form>
     );
 }
