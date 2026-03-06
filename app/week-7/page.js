@@ -24,6 +24,18 @@ export default function Page() {
         <GroceryItemForm onAddItem={handleAddItem} />
 
         <ItemList items={items} />
+
+            <section className="mt-10 w-80 bg-white dark:bg-slate-900 border border-dashed border-purple-500 rounded-lg p-4">
+                <h2 className="text-xl font-bold text-center mb-3 text-purple-900 dark:text-purple-200">Wireframe</h2>
+
+                <div className="border border-purple-400 rounded-md p-3 mb-3 text-center">Grocery Item Form</div>
+
+                <div className="space-y-2">
+                    <div className="border border-purple-300 rounded-md p-2 text-center">Grocery Item 1</div>
+                    <div className="border border-purple-300 rounded-md p-2 text-center">Grocery Item 2</div>
+                    <div className="border border-purple-300 rounded-md p-2 text-center">Grocery Item 3</div>
+                </div>
+            </section>
         </main>
     );
 }
