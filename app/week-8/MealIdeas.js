@@ -41,8 +41,6 @@ export default function MealIdeas({ ingredient }) {
             setLoading(false);
         }
 
-        const mealIdeas = await fetchMealIdeas(ingredient);
-        setMeals(mealIdeas);
     }
 
     useEffect(() => {loadMealIdeas();}, [ingredient]);
@@ -65,7 +63,7 @@ export default function MealIdeas({ ingredient }) {
 
                     <ul className="space-y-2">
                         {meals.map((meal) => (
-                            <li key={meal.idMeal}className="border border-purple-300 rounded-md p-2 text-purple-900 dark:text-purple-100">{meal.strMeal} </li>
+                            <li key={meal.idMeal} className="border border-purple-300 rounded-md p-2 text-purple-900 dark:text-purple-100">{meal.strMeal} </li>
                         ))}
                     </ul>
                 </>
