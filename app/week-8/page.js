@@ -18,6 +18,10 @@ export default function Page() {
 
     function handleItemSelect(item) {
         const cleanedName = item.name
+        .split(",")[0]
+        .trim()
+        .replace(/[^\p{L}\p{N}\s-]/gu,"");
+
         setSelectedItemName(cleanedName);
     }
 
@@ -30,7 +34,7 @@ export default function Page() {
         <h1 className="text-3xl font-bold text-purple-900 text-center mt-8 dark:text-purple-200">Shopping List</h1>
 
         <div className="flex flex-col md:flex-row gap-10 items-start">
-            <div classname="flex flex-col items-center">
+            <div className="flex flex-col items-center">
                 <GroceryItemForm onAddItem={handleAddItem} />
                 <ItemList items={items} onItemSelect={handleItemSelect} />
             </div>
