@@ -5,12 +5,20 @@ import { useState } from "react";
 import itemsData from "./items.json";
 import GroceryItemForm from "./GroceryItemForm";
 import ItemList from "./ItemList";
+import MealIdeas from "./MealIdeas";
+
 
 export default function Page() {
     const [items, setItems] = useState(itemsData);
+    const [selectedItemName, setSelectedItemName] = useState("");
 
     function handleAddItem(newItem) {
         setItems((prevItems) => [...prevItems, newItem]);
+    }
+
+    function handleItemSelect(item) {
+        const cleanedName = item.name
+        setSelectedItemName(cleanedName);
     }
 
     return (
@@ -23,7 +31,9 @@ export default function Page() {
 
         <GroceryItemForm onAddItem={handleAddItem} />
 
-        <ItemList items={items} />
+        <ItemList items={items} onItemSelect={handleItemSelect} />
+
+        <MealIdeas ingredient={selectedItemName} />
 
         <section className="mt-10 w-80 bg-white dark:bg-slate-900 border border-dashed border-purple-500 rounded-lg p-4">
             <h2 className="text-xl font-bold text-center mb-3 text-purple-900 dark:text-purple-200">Wireframe</h2>
