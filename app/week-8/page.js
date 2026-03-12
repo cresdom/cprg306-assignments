@@ -29,12 +29,13 @@ export default function Page() {
 
         <h1 className="text-3xl font-bold text-purple-900 text-center mt-8 dark:text-purple-200">Shopping List</h1>
 
-        <GroceryItemForm onAddItem={handleAddItem} />
-
-        <ItemList items={items} onItemSelect={handleItemSelect} />
-
-        <MealIdeas ingredient={selectedItemName} />
-
+        <div className="flex flex-col md:flex-row gap-10 items-start">
+            <div classname="flex flex-col items-center">
+                <GroceryItemForm onAddItem={handleAddItem} />
+                <ItemList items={items} onItemSelect={handleItemSelect} />
+            </div>
+            <MealIdeas ingredient={selectedItemName} />
+        </div>
     </main>
     );
 }
