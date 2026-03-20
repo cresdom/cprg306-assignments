@@ -6,11 +6,22 @@ import itemsData from "./items.json";
 import GroceryItemForm from "./GroceryItemForm";
 import ItemList from "./ItemList";
 import MealIdeas from "./MealIdeas";
+import { useUserAuth } from "../contexts/AuthContext";
 
 
 export default function Page() {
     const [items, setItems] = useState(itemsData);
     const [selectedItemName, setSelectedItemName] = useState("");
+
+    if (!user) {
+        return (
+            <main className="min-h-screen flex flex-col items-center justify-center bg-linear-to-r from-violet-100 to-fuchsia-200 dark:from-slate-950 dark:to-slate-900 text-purple-950 dark:text-purple-100 p-6">
+                <p className="mb-4 text-xl font-semibold">You must be logged in to view the shopping list.</p>
+                <Link href="/" className="text-purple-700 hover:underline dark:text-purple-300">Go back to login</Link>
+            </main>
+        );
+    }
+
 
     function handleAddItem(newItem) {
         setItems((prevItems) => [...prevItems, newItem]);
