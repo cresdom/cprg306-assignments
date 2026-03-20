@@ -10,6 +10,7 @@ import { useUserAuth } from "../../contexts/AuthContext";
 
 
 export default function Page() {
+    const { user } = useUserAuth();
     const [items, setItems] = useState(itemsData);
     const [selectedItemName, setSelectedItemName] = useState("");
 

@@ -29,14 +29,14 @@ export default function HomePage() {
             <>
                 <p className="mb-6">Log in with GitHub to continue!</p>
                 <button onClick={handleLogin}
-                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-md transition">Login with GitHub</button>
+                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-md transition">Login here! :D</button>
             </>
             ) : (
             <>
-                <p className="mb-4">Welcome, {user.displayName} ({user.email})</p>
+                <p className="mb-4">Hello!</p>
 
                 <div className="flex flex-col gap-3">
-                <Link href="/shopping-list" 
+                <Link href="/week-9/shopping-list" 
                 className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-md transition">Go to Shopping List</Link>
 
                 <button
