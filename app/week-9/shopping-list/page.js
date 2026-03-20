@@ -6,7 +6,7 @@ import itemsData from "./items.json";
 import GroceryItemForm from "./GroceryItemForm";
 import ItemList from "./ItemList";
 import MealIdeas from "./MealIdeas";
-import { useUserAuth } from "../contexts/AuthContext";
+import { useUserAuth } from "../../contexts/AuthContext";
 
 
 export default function Page() {
