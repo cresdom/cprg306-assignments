@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function HomePage() {
     const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
     const [error, setError] = useState("");
-    
+
     async function handleLogin() {
         setError("");
             try {
@@ -31,6 +31,9 @@ export default function HomePage() {
     return (
         <main className="min-h-screen flex flex-col items-center justify-center bg-linear-to-r from-violet-100 to-fuchsia-200 dark:from-slate-950 dark:to-slate-900 text-purple-950 dark:text-purple-100 p-6">
         <div className="bg-white dark:bg-slate-900 shadow-lg rounded-lg p-8 w-full max-w-md text-center">
+            
+            <Link href="/" className="text-purple-700 hover:underline dark:text-purple-300">← Back to Homepage</Link>
+
             <h1 className="text-3xl font-bold mb-4 text-purple-900 dark:text-purple-200">Shopping List App</h1>
 
             {error && (
@@ -55,6 +58,7 @@ export default function HomePage() {
                     className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md transition">Logout
                 </button>
                 </div>
+
             </>
             )}
         </div>
