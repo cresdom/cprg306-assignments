@@ -33,7 +33,7 @@ export default function HomePage() {
             </>
             ) : (
             <>
-                <p className="mb-4">Hello!</p>
+                <p className="mb-4">Hello!{user.displayName} ({user.email})</p>
 
                 <div className="flex flex-col gap-3">
                 <Link href="/week-9/shopping-list" 
