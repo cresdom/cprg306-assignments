@@ -2,11 +2,17 @@
 
 import Link from "next/link";
 import { useUserAuth } from "../contexts/AuthContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function HomePage() {
     const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
     const [error, setError] = useState("");
+
+    useEffect(() => {
+        if (user) {
+            setError("");
+        }
+    }, [user]);
 
     async function handleLogin() {
         setError("");
@@ -51,7 +57,7 @@ export default function HomePage() {
                     </>
                 ) : (
                     <>
-                        <p className="mb-4">Hello!{user.displayName} ({user.email})</p>
+                        <p className="mb-4">Hello! {user.displayName} ({user.email})</p>
 
                         <div className="flex flex-col gap-3">
                             <Link href="/week-9/shopping-list" 
