@@ -70,7 +70,7 @@ export default function GroceryItemForm({ onAddItem }) {
                 name="category"
                 value={item.category}
                 onChange={handleChange}
-                className="w-full p-2 rounded-md border border-purple-300 bg-white text-purple-950 dark:bg-slate-800 dark:text-purple-100 dark:border-slate-700 dark:scheme-dark]">
+                className="w-full p-2 rounded-md border border-purple-300 bg-white text-purple-950 dark:bg-slate-800 dark:text-purple-100 dark:border-slate-700 dark:scheme-dark">
                 <option value="produce">Produce</option>
                 <option value="dairy">Dairy</option>
                 <option value="bakery">Bakery</option>
