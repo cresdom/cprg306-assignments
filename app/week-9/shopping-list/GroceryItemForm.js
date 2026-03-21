@@ -50,7 +50,7 @@ export default function GroceryItemForm({ onAddItem }) {
             className="w-full p-2 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"/>
         </div>
 
-        {/* quantityy & category */}
+        {/* quantity & category */}
         <div className="flex gap-4">
             <div className="flex-1">
             <label className="block text-purple-900 dark:text-purple-200 mb-1 font-medium">Quantity</label>
@@ -70,14 +70,14 @@ export default function GroceryItemForm({ onAddItem }) {
                 name="category"
                 value={item.category}
                 onChange={handleChange}
-                className="w-full p-2 rounded-md border border-purple-300 bg-white text-purple-950 dark:bg-slate-800 dark:text-purple-100 dark:border-slate-700dark:[color-scheme:dark]">
+                className="w-full p-2 rounded-md border border-purple-300 bg-white text-purple-950 dark:bg-slate-800 dark:text-purple-100 dark:border-slate-700 dark:scheme-dark]">
                 <option value="produce">Produce</option>
                 <option value="dairy">Dairy</option>
                 <option value="bakery">Bakery</option>
                 <option value="meat">Meat</option>
-                <option value="frozen-foods">Frozen Foods</option>
-                <option value="canned-goods">Canned Goods</option>
-                <option value="dry-goods">Dry Goods</option>
+                <option value="frozen foods">Frozen Foods</option>
+                <option value="canned goods">Canned Goods</option>
+                <option value="dry goods">Dry Goods</option>
                 <option value="beverages">Beverages</option>
                 <option value="snacks">Snacks</option>
                 <option value="household">Household</option>

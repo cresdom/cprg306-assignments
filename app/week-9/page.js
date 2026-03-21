@@ -2,22 +2,30 @@
 
 import Link from "next/link";
 import { useUserAuth } from "../contexts/AuthContext";
+import { useState } from "react";
 
 export default function HomePage() {
     const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
-
+    const [error, setError] = useState("");
+    
     async function handleLogin() {
-        try {
-        await gitHubSignIn();} 
-        catch (error) {
-        console.error("Login failed:", error);}
+        setError("");
+            try {
+            await gitHubSignIn();} 
+            catch (error) {
+            console.error("Login failed:", error);
+            setError("Login failed. Please try again.");
+        }
     }
 
     async function handleLogout() {
+        setError("");
         try {
-        await firebaseSignOut();} 
-        catch (error) {
-        console.error("Logout failed:", error);}
+            await firebaseSignOut();} 
+            catch (error) {
+            console.error("Logout failed:", error);
+            setError("Logout failed. Please try again.");
+        }
     }
 
     return (
@@ -25,6 +33,9 @@ export default function HomePage() {
         <div className="bg-white dark:bg-slate-900 shadow-lg rounded-lg p-8 w-full max-w-md text-center">
             <h1 className="text-3xl font-bold mb-4 text-purple-900 dark:text-purple-200">Shopping List App</h1>
 
+            {error && (
+                <p className="mb-4 text-red-600 dark:text-red-400 font-medium">{error}</p>
+            )}
             {!user ? (
             <>
                 <p className="mb-6">Log in with GitHub to continue!</p>
