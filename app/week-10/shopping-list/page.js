@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import itemsData from "./items.json";
 import GroceryItemForm from "./GroceryItemForm";
 import ItemList from "./ItemList";
 import MealIdeas from "./MealIdeas";
@@ -11,14 +10,14 @@ import { useUserAuth } from "../../contexts/AuthContext";
 
 export default function Page() {
     const { user } = useUserAuth();
-    const [items, setItems] = useState(itemsData);
+    const [items, setItems] = useState([]);
     const [selectedItemName, setSelectedItemName] = useState("");
 
     if (!user) {
         return (
             <main className="min-h-screen flex flex-col items-center justify-center bg-linear-to-r from-violet-100 to-fuchsia-200 dark:from-slate-950 dark:to-slate-900 text-purple-950 dark:text-purple-100 p-6">
                 <p className="mb-4 text-xl font-semibold">You must be logged in to view the shopping list.</p>
-                <Link href="/week-9" className="text-purple-700 hover:underline dark:text-purple-300">Go back to login</Link>
+                <Link href="/week-10" className="text-purple-700 hover:underline dark:text-purple-300">Go back to login</Link>
             </main>
         );
     }
@@ -39,7 +38,7 @@ export default function Page() {
     return (
         <main className="min-h-screen bg-linear-to-r from-violet-100 to-fuchsia-200 dark:from-slate-950 dark:to-slate-900 flex flex-col items-center gap-6 text-purple-950 dark:text-purple-100">
             <div className="w-full max-w-xl">
-            <Link href="/week-9" className="text-purple-700 hover:underline font-light dark:text-purple-300">← Back to Home</Link>
+            <Link href="/week-10" className="text-purple-700 hover:underline font-light dark:text-purple-300">← Back to Home</Link>
         </div>
 
         <h1 className="text-3xl font-bold text-purple-900 text-center mt-8 dark:text-purple-200">Shopping List</h1>
