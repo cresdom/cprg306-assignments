@@ -33,8 +33,11 @@ export default function Page() {
         );
     }
 
-    function handleAddItem(newItem) {
-        setItems((prevItems) => [...prevItems, newItem]);
+    async function handleAddItem(newItem) {
+        const id = await addItem(user.uid, newItem);
+        const itemWithId = { id, ...newItem };
+
+        setItems((prevItems) => [...prevItems, itemWithId]);
     }
 
     function handleItemSelect(item) {
